@@ -1,8 +1,8 @@
 new Vue({
     el:'#search',
     data:{
-       displaying:'none',
-        name:'',
+       displaying:'none', //for style model binding
+        name:'', //search result model binding
         users:[
             {name:'arif'},
             {name:'harif'},
