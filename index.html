@@ -1,0 +1,77 @@
+	<!DOCTYPE html>
+	<!-- this is just a basic smart search app and meant for further development
+			@developed by Sharif in MicroDreamIT lab
+			@time and date: 0720AM +6 GMT, 09-02-2016
+	   -->
+	<html>
+	<head>
+	  <title>Vuejs basic smart search</title>
+	  
+	</head>
+	  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css"> 
+	  <style type="text/css">
+	  			.staggered-transition {
+		transition: all .8s ease;
+		overflow: hidden;
+		margin: 0;
+		/*height: 20px;*/
+	}
+	/*staggered class is for bit animation */
+	.staggered-enter, .staggered-leave {
+		opacity: 0;
+		height: 10px;
+	}
+	.search_bar{
+		position: absolute;
+		width: 92%;
+		box-shadow: 0px 4px 16px black;
+	}
+	  </style>
+	<body  id="search">
+
+	<div class="container">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+
+			<!-- @submit.prevent is to prevent this form to act -->
+				<form class="navbar-form navbar-left" role="search" @submit.prevent>
+							
+							<div class="form-group">
+								<input 
+								type="text" 
+								class="form-control" 
+								placeholder="Search handyman"
+						       	v-model="name"
+						       	v-on:keyup="searching"
+								>
+
+								<div class=" search_bar">
+									<a
+										href="/profile/{{ user.name }}"
+										class="list-group-item"
+										v-for="user in users|filterBy name in 'name'|limitBy 5"
+										v-bind:style="{display:displaying}"
+										transition="staggered"
+										stagger="100"
+									>
+									<!-- for blade use @ symbol like @{{user.name}} -->
+										{{user.name}}
+									</a>
+								</div>
+								<!-- <pre>{{ $data|json }}</pre> -->
+							</div>
+						</form>
+			
+			<div class="col-md-4"></div>
+
+
+	</div>
+	
+	<!-- main Vuejs file -->
+	<script src="js/vue.js"></script>
+	<!-- for ajax request must use vue-resource -->
+	<script src="js/vue-resource.min.js"></script>
+	<!-- custom javascript -->
+	<script src="js/custom.js"></script>
+	</body>
+	</html>
