@@ -21,7 +21,7 @@ new Vue({
             if(this.name)
             {
             	
-		/* AJAX REQUST START POINT especially 
+		/* for AJAX REQUST
 		+this.name, think as id or search argument for apiController
                if you are using laravel then add this line in your route,
                Route::get('api/search/users/{name}', 'apiController');
