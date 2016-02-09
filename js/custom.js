@@ -21,7 +21,7 @@ new Vue({
             if(this.name)
             {
         		/* AJAX REQUST START POINT especially for laravel or ajax request, just uncomment only two line below
-
+		//+this.name is think as id or search argument for apiController
                 this.$http.get('/api/search/users/'+this.name, function(id){
                     this.$set('users', id);
                 });
