@@ -20,7 +20,7 @@ new Vue({
         searching:function(){
             if(this.name)
             {
-        		/* AJAX REQUST START POINT especially for laravel or ajax request, just uncomment only two like below
+        		/* AJAX REQUST START POINT especially for laravel or ajax request, just uncomment only two line below
 
                 this.$http.get('/api/search/users/'+this.name, function(id){
                     this.$set('users', id);
