@@ -36,30 +36,30 @@
 			<!-- @submit.prevent is to prevent this form to act -->
 				<form class="navbar-form navbar-left" role="search" @submit.prevent>
 							
-							<div class="form-group">
-								<input 
-								type="text" 
-								class="form-control" 
-								placeholder="Search user"
-						       	v-model="name"
-						       	v-on:keyup="searching"
-								>
+					<div class="form-group">
+						<input 
+							type="text" 
+							class="form-control" 
+							placeholder="Search user"
+					       		v-model="name"
+					       		v-on:keyup="searching"
+						>
 
-								<div class=" search_bar">
-									<a
-										href="/profile/{{ user.name }}"
-										class="list-group-item"
-										v-for="user in users|filterBy name in 'name'|limitBy 5"
-										v-bind:style="{display:displaying}"
-										transition="staggered"
-										stagger="100"
-									>
-									<!-- for blade use @ symbol like @{{user.name}} -->
-										{{user.name}}
-									</a>
-								</div>
-								<!-- <pre>{{ $data|json }}</pre> -->
-							</div>
+					<div class=" search_bar">
+						<a
+							href="/profile/{{ user.name }}"
+							class="list-group-item"
+							v-for="user in users|filterBy name in 'name'|limitBy 5"
+							v-bind:style="{display:displaying}"
+							transition="staggered"
+							stagger="100"
+						>
+						<!-- for blade use @ symbol like @{{user.name}} -->
+							{{user.name}}
+						</a>
+					</div>
+						<!-- <pre>{{ $data|json }}</pre> -->
+					</div>
 						</form>
 			
 			<div class="col-md-4"></div>
